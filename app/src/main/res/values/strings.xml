@@ -1,0 +1,12 @@
+<resources>
+  <string name="app_name">Papayin</string>
+  <string name="my_api_key">c52a9626310f97d56b98c9f939b4ad3e</string>
+
+  <string name="text_show_movie">Show movie</string>
+  <string name="my_movie">My Movie</string>
+  <string name="additional_information_title">Additional information</string>
+  <string name="date_format">Date Release : %s</string>
+  <string name="genre_format">Genres : %s</string>
+  <string name="country_format">Production countries : %s</string>
+  <string name="company_format">Production companies : %s</string>
+</resources>

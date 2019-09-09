@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/Papayin.iml" filepath="$PROJECT_DIR$/Papayin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/../Papayin.iml" filepath="$PROJECT_DIR$/../Papayin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../YouTubeApi/YouTubeApi.iml" filepath="$PROJECT_DIR$/../YouTubeApi/YouTubeApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
+>>>>>>> 2a865b79a1e82c08037c3a56d7fe447de1cd87dc
+    </modules>
+  </component>
+</project>

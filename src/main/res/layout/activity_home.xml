@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <fragment
+      android:id="@+id/nav_host_fragment"
+      android:name="androidx.navigation.fragment.NavHostFragment"
+      android:layout_width="@dimen/none"
+      android:layout_height="@dimen/none"
+      app:defaultNavHost="true"
+      app:navGraph="@navigation/nav_graph"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      android:layout_marginTop="@dimen/fragment_margin_top"
+      app:layout_constraintTop_toTopOf="@+id/toolbar"/>
+
+    <androidx.appcompat.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="@dimen/none"
+      android:layout_height="@dimen/toolbar_height"
+      android:gravity="top|center"
+      app:contentInsetEnd="0dp"
+      app:contentInsetStart="@dimen/none"
+      android:background="@drawable/ic_background_toolbar_curve"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent">
+
+      <ImageView
+        android:id="@+id/iv_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"
+        tools:ignore="ContentDescription"/>
+
+      <TextView
+        android:id="@+id/tv_title_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_text_size"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:fontFamily="@font/omnes"
+        android:textAlignment="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

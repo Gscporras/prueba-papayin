@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="com.whitestudios.papayin.fragments.moviedetail.MovieDetailViewModel"/>
+  </data>
+
+  <ScrollView
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:paddingBottom="32dp"
+      android:layout_height="wrap_content">
+
+
+      <ImageView
+        android:id="@+id/iv_banner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="16:9"
+        android:adjustViewBounds="true"
+        app:imageUrl="@{viewModel.movie.backdropUrl}"
+        android:scaleType="centerCrop"
+        tools:src="@tools:sample/backgrounds/scenic"
+        tools:ignore="ContentDescription"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+      <ImageView
+        android:id="@+id/iv_play"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_play"
+        android:alpha="0.6"
+        android:onClick="@{() -> viewModel.onPlayTrailer()}"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_banner"
+        app:layout_constraintTop_toTopOf="@+id/iv_banner"
+        app:layout_constraintEnd_toEndOf="@+id/iv_banner"
+        app:layout_constraintStart_toStartOf="@+id/iv_banner"
+        tools:ignore="ContentDescription"/>
+
+      <ImageView
+        android:id="@+id/iv_poster"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        app:imageUrl="@{viewModel.movie.posterUrl}"
+        tools:src="@tools:sample/backgrounds/scenic"
+        app:layout_constraintTop_toBottomOf="@+id/iv_banner"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_banner"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        tools:ignore="ContentDescription"/>
+
+      <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem/random"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_poster"
+        app:layout_constraintTop_toBottomOf="@+id/iv_banner"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:maxLines="3"
+        android:text="@{viewModel.movie.title}"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/iv_poster"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/omnes"/>
+
+      <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:text="@{viewModel.movie.overview}"
+        app:layout_constraintTop_toBottomOf="@+id/iv_poster"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/tv_overview"
+        android:textColor="@color/black"/>
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/additional_information_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_overview"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_overview"
+        android:fontFamily="@font/omnes"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:id="@+id/tv_additional_info_title"/>
+
+
+      <TextView
+        android:id="@+id/tv_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="8dp"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/ic_local_movies"
+        app:layout_constraintTop_toBottomOf="@+id/tv_additional_info_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_additional_info_title"/>
+
+      <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/ic_date"
+        app:layout_constraintTop_toBottomOf="@+id/tv_gender"
+        app:layout_constraintStart_toStartOf="@+id/tv_additional_info_title"/>
+
+
+      <TextView
+        android:id="@+id/tv_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/ic_local_play"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        app:layout_constraintStart_toStartOf="@+id/tv_additional_info_title"/>
+
+
+      <TextView
+        android:id="@+id/tv_companies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/lorem"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/ic_camera_roll"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country"
+        app:layout_constraintStart_toStartOf="@+id/tv_additional_info_title"/>
+
+      <androidx.constraintlayout.widget.Group
+        android:visibility="gone"
+        app:hideWhenLoading="@{viewModel.status}"
+        app:constraint_referenced_ids="tv_companies,tv_country,tv_date,tv_gender,tv_additional_info_title,iv_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/information_group"/>
+
+      <ProgressBar
+        app:displayWhenLoading="@{viewModel.status}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_overview"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </ScrollView>
+
+</layout>
